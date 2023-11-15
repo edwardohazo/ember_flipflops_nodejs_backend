@@ -37,6 +37,9 @@ app.use(express.json());
 app.use(cors());
 
 // Routers
+app.use('/', (req, res) => {
+  res.send(`<h1>HOLA MUNDO!</h1>`);
+});
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/products', productRouter);
