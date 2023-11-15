@@ -43,11 +43,9 @@ app.use(cors());
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/products', productRouter);
-app.use('/', (req, res) => {
-  res.send(`<h1>HOLA MUNDO!</h1>`);
-});
 app.get('/api/paypal/clientId', (req, res) => {
-  res.send({ clientId: config.PAYPAL_CLIENT_ID });
+  // res.send({ clientId: config.PAYPAL_CLIENT_ID });
+  res.send({ clientId: 'hola perro' });
 });
 
 // // SIMULATION OF PRODUCTS DB CALLED data.js
