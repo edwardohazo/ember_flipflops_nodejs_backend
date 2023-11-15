@@ -37,12 +37,15 @@ app.use(express.json());
 app.use(cors());
 
 // Routers
-app.use('/', (req, res) => {
-  res.send(`<h1>HOLA MUNDO!</h1>`);
-});
+// app.use('/', (req, res) => {
+//   res.send(`<h1>HOLA MUNDO!</h1>`);
+// });
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/products', productRouter);
+app.use('/', (req, res) => {
+  res.send(`<h1>HOLA MUNDO!</h1>`);
+});
 app.get('/api/paypal/clientId', (req, res) => {
   res.send({ clientId: config.PAYPAL_CLIENT_ID });
 });
